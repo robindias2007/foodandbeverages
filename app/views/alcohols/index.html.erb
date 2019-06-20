@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alcohols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>High price</th>
+      <th>Low price</th>
+      <th>Standard price</th>
+      <th>Weight</th>
+      <th>Quantity</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alcohols.each do |alcohol| %>
+      <tr>
+        <td><%= alcohol.name %></td>
+        <td><%= alcohol.high_price %></td>
+        <td><%= alcohol.low_price %></td>
+        <td><%= alcohol.standard_price %></td>
+        <td><%= alcohol.weight %></td>
+        <td><%= alcohol.quantity %></td>
+        <td><%= alcohol.category %></td>
+        <td><%= link_to 'Show', alcohol %></td>
+        <td><%= link_to 'Edit', edit_alcohol_path(alcohol) %></td>
+        <td><%= link_to 'Destroy', alcohol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alcohol', new_alcohol_path %>
