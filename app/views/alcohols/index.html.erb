@@ -1,17 +1,11 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
-<h1>Alcohols</h1>
+<h1>alcohols</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>High price</th>
-      <th>Low price</th>
-      <th>Standard price</th>
-      <th>Weight</th>
-      <th>Quantity</th>
-      <th>Category</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,12 +14,6 @@
     <% @alcohols.each do |alcohol| %>
       <tr>
         <td><%= alcohol.name %></td>
-        <td><%= alcohol.high_price %></td>
-        <td><%= alcohol.low_price %></td>
-        <td><%= alcohol.standard_price %></td>
-        <td><%= alcohol.weight %></td>
-        <td><%= alcohol.quantity %></td>
-        <td><%= alcohol.category %></td>
         <td><%= link_to 'Show', alcohol %></td>
         <td><%= link_to 'Edit', edit_alcohol_path(alcohol) %></td>
         <td><%= link_to 'Destroy', alcohol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,6 +22,132 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New Alcohol', new_alcohol_path %>
+<%=  current_admin.email %>
+
+
+<section>
+  <!--for demo wrap-->
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>High Price</th>
+          <th>Low Price</th>
+          <th>Quantity</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <% @alcohols.each do |alcohol| %>
+          <tr>
+            <td><%= alcohol.name %></td>
+            <td><%= alcohol.high_price %></td>
+            <td><%= alcohol.low_price %></td>
+            <td><%= alcohol.quantity %></td>
+            <td><%= alcohol.weight %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style type="text/css">
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: black;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+</style>
+

@@ -1,52 +1,53 @@
-<%= form_with(model: alcohol, local: true) do |form| %>
-  <% if alcohol.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(alcohol.errors.count, "error") %> prohibited this alcohol from being saved:</h2>
+<div class="container">
+  <%= form_with(model: alcohol, local: true) do |form| %>
+    <% if alcohol.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(alcohol.errors.count, "error") %> prohibited this alcohol from being saved:</h2>
 
-      <ul>
-      <% alcohol.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% alcohol.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div
     </div>
+
+    <div class="form-group">
+      <%= form.label :high_price %>
+      <%= form.text_field :high_price, id: :alcohol_high_price, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :low_price %>
+      <%= form.text_field :low_price, id: :alcohol_low_price, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :standard_price %>
+      <%= form.text_field :standard_price, id: :alcohol_standard_price, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :weight %>
+      <%= form.number_field :weight, id: :alcohol_weight, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :quantity %>
+      <%= form.text_field :quantity, id: :alcohol_quantity, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :category %>
+      <%= form.text_field :category, id: :alcohol_category, class:"form-control form-control-sm" %>
+    </div>
+
+    <div class="form-group"><%= form.submit%></div>
+      
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :alcohol_name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :high_price %>
-    <%= form.text_field :high_price, id: :alcohol_high_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :low_price %>
-    <%= form.text_field :low_price, id: :alcohol_low_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :standard_price %>
-    <%= form.text_field :standard_price, id: :alcohol_standard_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.number_field :weight, id: :alcohol_weight %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity, id: :alcohol_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category, id: :alcohol_category %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
