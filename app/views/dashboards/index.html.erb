@@ -7,7 +7,7 @@
 			<%= image_tag "food.jpg", class:"card-img-top" %>
 		  <div class="card-body">
 		    <h5 class="card-title">Food Menu</h5>
-		    <p class="card-text">Click on the button below to edit the food menu</p>
+		    <p class="card-text">Click on the buttons for food</p>
 		    <%= link_to "Edit Food Menu", foods_edit_path, class:"btn btn-primary" %>
 		    <%= link_to "Add Food Item", new_food_path, class:"btn btn-primary" %>
 		  </div>
@@ -18,14 +18,29 @@
 		<div class="card">
 			<%= image_tag "alcohol.jpg", class:"card-img-top" %>
 		  <div class="card-body">
-		    <h5 class="card-title">Alcohol Menu</h5>
-		    <p class="card-text">Click on the button below to edit the alcohol menu</p>
+		    <h5 class="card-title">Beverage Menu</h5>
+		    <p class="card-text">Click on the button below for beverages</p>
 		    <%= link_to "Beverage Menu", alcohols_edit_path, class:"btn btn-primary" %>
 		    <%= link_to "Add Beverage Item", new_alcohol_path, class:"btn btn-primary" %>
 		  </div>
 		</div>
 	</div>
 	<div class="col-md-1"></div>
+</div>
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<div class="card">
+			<%= image_tag "orders.jpg", class:"card-img-top" %>
+		  <div class="card-body">
+		    <h5 class="card-title">Orders</h5>
+		    <p class="card-text">Click on the button below for orders</p>
+		    <%= link_to "Total Orders", orders_path, class:"btn btn-primary" %>
+		    <%= link_to "Create An Order", new_order_path, class:"btn btn-primary" %>
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-4"></div>
 </div>
 
 <style type="text/css">
