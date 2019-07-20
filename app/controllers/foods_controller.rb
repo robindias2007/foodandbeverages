@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, :only => [:index, :new, :create, :update, :index_edit]
+  before_action :authenticate_admin!, :only => [:new, :create, :update, :index_edit]
 
   # GET /foods
   # GET /foods.json

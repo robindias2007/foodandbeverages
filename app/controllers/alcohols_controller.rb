@@ -1,6 +1,6 @@
 class AlcoholsController < ApplicationController
   before_action :set_alcohol, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, :only => [:index, :new, :create, :update, :index_edit]
+  before_action :authenticate_admin!, :only => [:new, :create, :update, :index_edit]
 
   # GET /alcohols
   # GET /alcohols.json
