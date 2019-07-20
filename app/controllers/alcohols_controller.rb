@@ -5,6 +5,7 @@ class AlcoholsController < ApplicationController
   # GET /alcohols.json
   def index
     @alcohols = Alcohol.all
+    @skip_header = true;
   end
 
   # GET /alcohols/1

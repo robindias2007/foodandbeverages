@@ -10,8 +10,7 @@ class Admins::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    @admins = Admin.new(configure_sign_in_params)
-    redirect_to foods_path
+    super
   end
 
   # DELETE /resource/sign_out

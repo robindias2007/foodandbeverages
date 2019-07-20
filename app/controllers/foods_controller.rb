@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = Food.all
+    @skip_header = true;
   end
 
   # GET /foods/1
