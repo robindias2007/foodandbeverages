@@ -11,41 +11,37 @@
         </ul>
       </div>
     <% end %>
-
-    <div
+    <br><br>
+    <h2 align="center">Create Beverage Item</h2>
+    <br>
+    <div class="form-group">
+      <%= form.text_field :name, id: :name, class:"form-control form-control-sm", placeholder:"Name of the alcohol" %>
+    </div>
+    <div class="form-group">
+      <%= form.text_field :high_price, id: :alcohol_high_price, class:"form-control form-control-sm", placeholder:"High Price" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :high_price %>
-      <%= form.text_field :high_price, id: :alcohol_high_price, class:"form-control form-control-sm" %>
+      <%= form.text_field :low_price, id: :alcohol_low_price, class:"form-control form-control-sm", placeholder:"Low Price" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :low_price %>
-      <%= form.text_field :low_price, id: :alcohol_low_price, class:"form-control form-control-sm" %>
+      <%= form.text_field :standard_price, id: :alcohol_standard_price, class:"form-control form-control-sm", placeholder:"Price" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :standard_price %>
-      <%= form.text_field :standard_price, id: :alcohol_standard_price, class:"form-control form-control-sm" %>
+      <%= form.number_field :weight, id: :alcohol_weight, class:"form-control form-control-sm", placeholder:"Weight" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :weight %>
-      <%= form.number_field :weight, id: :alcohol_weight, class:"form-control form-control-sm" %>
+      <%= form.text_field :quantity, id: :alcohol_quantity, class:"form-control form-control-sm", placeholder:"quantity" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :quantity %>
-      <%= form.text_field :quantity, id: :alcohol_quantity, class:"form-control form-control-sm" %>
+      <%= form.text_field :category, id: :alcohol_category, class:"form-control form-control-sm", placeholder:"category" %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :category %>
-      <%= form.text_field :category, id: :alcohol_category, class:"form-control form-control-sm" %>
-    </div>
-
-    <div class="form-group"><%= form.submit%></div>
+    <div class="form-group"><%= form.submit "Create", class: "btn btn-danger" %></div>
       
   <% end %>
 </div>

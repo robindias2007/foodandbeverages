@@ -83,6 +83,11 @@ label {
   display: block;
 }
 
+a:hover
+{
+  background: transparent;
+}
+
 .navbar
 {
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);

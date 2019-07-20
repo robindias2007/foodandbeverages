@@ -8,7 +8,8 @@
 		  <div class="card-body">
 		    <h5 class="card-title">Food Menu</h5>
 		    <p class="card-text">Click on the button below to edit the food menu</p>
-		    <%= link_to "Food Menu", foods_path, class:"btn btn-primary" %>
+		    <%= link_to "Edit Food Menu", foods_edit_path, class:"btn btn-primary" %>
+		    <%= link_to "Add Food Item", new_food_path, class:"btn btn-primary" %>
 		  </div>
 		</div>
 	</div>
@@ -19,7 +20,8 @@
 		  <div class="card-body">
 		    <h5 class="card-title">Alcohol Menu</h5>
 		    <p class="card-text">Click on the button below to edit the alcohol menu</p>
-		    <%= link_to "Alcohol Menu", alcohols_path, class:"btn btn-primary" %>
+		    <%= link_to "Beverage Menu", alcohols_edit_path, class:"btn btn-primary" %>
+		    <%= link_to "Add Beverage Item", new_alcohol_path, class:"btn btn-primary" %>
 		  </div>
 		</div>
 	</div>

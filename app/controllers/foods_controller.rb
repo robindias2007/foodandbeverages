@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, :only => [:index, :new, :create, :update, :index_edit]
 
   # GET /foods
   # GET /foods.json
@@ -57,9 +58,18 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
+      format.html { redirect_to foods_edit_path, notice: 'Food was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def index_edit
+    @foods = Food.order(created_at: :desc).all
+    @food = Food.find(params[:format]) rescue nil
+      if params[:commit] == 'Update'         
+        @food.update_attributes(food_params)   
+        redirect_back fallback_location: foods_edit_path
+      end
   end
 
   private
@@ -71,6 +81,10 @@ class FoodsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
       params.require(:food).permit(:name, :high_price, :low_price, :normal_price, :quantity, :weight, :category)
+    end
+
+    def authenticate_admin
+      authenticate_admin!
     end
 end
 

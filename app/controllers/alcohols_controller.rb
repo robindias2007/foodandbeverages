@@ -1,5 +1,6 @@
 class AlcoholsController < ApplicationController
   before_action :set_alcohol, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, :only => [:index, :new, :create, :update, :index_edit]
 
   # GET /alcohols
   # GET /alcohols.json
@@ -57,9 +58,18 @@ class AlcoholsController < ApplicationController
   def destroy
     @alcohol.destroy
     respond_to do |format|
-      format.html { redirect_to alcohols_url, notice: 'Alcohol was successfully destroyed.' }
+      format.html { redirect_to alcohols_edit, notice: 'Beverage was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def index_edit
+    @alcohols = Alcohol.order(created_at: :desc).all
+    @alcohol = Alcohol.find(params[:format]) rescue nil
+      if params[:commit] == 'Update'         
+        @alcohol.update_attributes(alcohol_params)   
+        redirect_back fallback_location: alcohols_edit_path
+      end
   end
 
   private
@@ -71,5 +81,9 @@ class AlcoholsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def alcohol_params
       params.require(:alcohol).permit(:name, :high_price, :low_price, :standard_price, :weight, :quantity, :category)
+    end
+
+    def authenticate_admin
+      authenticate_admin!
     end
 end
