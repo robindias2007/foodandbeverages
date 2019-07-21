@@ -5,7 +5,7 @@ class AlcoholsController < ApplicationController
   # GET /alcohols
   # GET /alcohols.json
   def index
-    @alcohols = Alcohol.all
+    @alcohols = Alcohol.order(created_at: :desc).all
     @skip_header = true;
   end
 
