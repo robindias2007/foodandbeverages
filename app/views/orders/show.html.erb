@@ -25,5 +25,10 @@
   <%= @order.total_price %>
 </p>
 
+<p>
+  <strong>Address</strong>
+  <%= @order.address %>
+</p>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

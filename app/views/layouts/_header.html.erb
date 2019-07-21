@@ -3,6 +3,7 @@
     <%= image_tag "navbar.png", width:"50", height:"50", class:"d-inline-block align-top" %>
   </a>
   <% if admin_signed_in? %>
+  	<a href="/dashboard"><h2 align="center">Dashboard</h2></a>
   	<%= link_to('Sign Out', destroy_admin_session_path, :method => :delete) %>
   <% end %>
 </nav>

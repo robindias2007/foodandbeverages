@@ -7,7 +7,7 @@
         <th>High Price</th>
         <th>Low Price</th>
         <th>Price</th>
-        <th>Quantity(in ml)</th>
+        <th>Volume(in ml)</th>
         <th>Category</th>
         <th>Update</th>
         <th>Delete</th>
@@ -24,7 +24,7 @@
             <td><%= f.text_field :high_price, value:alcohol.high_price, class:"form-control form-control-sm" %></td>
             <td><%= f.text_field :low_price, value:alcohol.low_price, class:"form-control form-control-sm" %></td>
             <td><%= f.text_field :standard_price, value:alcohol.standard_price, class:"form-control form-control-sm" %></td>
-            <td><%= f.text_field :quantity, value:alcohol.quantity, class:"form-control form-control-sm" %></td>
+            <td><%= f.text_field :weight, value:alcohol.weight, class:"form-control form-control-sm" %></td>
             <td><%= f.text_field :category, value:alcohol.category, class:"form-control form-control-sm" %></td>
             <td><%= f.submit "Update", class:"btn btn-primary btn-sm" %></td>
             <td>
