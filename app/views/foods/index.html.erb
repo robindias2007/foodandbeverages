@@ -5,8 +5,14 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>
+            High Price<i class="material-icons" style="color: red">arrow_upward</i>
+          </th>
+          <th>
+            Low Price<i class="material-icons" style="color: green; font-weight: bold">arrow_downward</i>
+          </th>
           <th>Price</th>
-          <th>Quantity</th>
+          <!-- <th>Category</th> -->
           <th>Cuisine</th>
         </tr>
       </thead>
@@ -17,9 +23,11 @@
       <tbody>
         <% @foods.each do |food| %>
           <tr>
-            <td class="text-monospace" id="name"><%= food.name %></td>
-            <td class="text-monospace" id="low_price"><%= food.normal_price %></td>
-            <td class="text-monospace"><%= food.quantity %></td>
+            <td class="text-monospace", id="name_color"><%= food.name %></td>
+            <td class="text-monospace" id="high_price">$<%= food.high_price %></td>
+            <td class="text-monospace"id="low_price">$<%= food.low_price %></td>
+            <td class="text-monospace">$<%= food.normal_price %> </td>
+            <!-- <td class="text-monospace"><%= food.quantity %></td -->
             <td class="text-monospace"><%= food.category %></td>
           </tr>
         <% end %>

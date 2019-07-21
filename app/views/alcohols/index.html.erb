@@ -23,9 +23,9 @@
         <% @alcohols.each do |alcohol| %>
           <tr>
             <td class="text-monospace", id="name_color"><%= alcohol.name %></td>
-            <td class="text-monospace" id="high_price"><%= alcohol.high_price %></td>
-            <td class="text-monospace" id="low_price"><%= alcohol.low_price %></td>
-            <td class="text-monospace"><%= alcohol.standard_price %></td>
+            <td class="text-monospace" id="high_price">$<%= alcohol.high_price %></td>
+            <td class="text-monospace" id="low_price">$<%= alcohol.low_price %></td>
+            <td class="text-monospace">$<%= alcohol.standard_price %></td>
             <td class="text-monospace"><%= alcohol.weight %>ml</td>
           </tr>
         <% end %>
